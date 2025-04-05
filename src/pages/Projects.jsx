@@ -8,7 +8,7 @@ function Projects() {
 
       <FeaturedProject
         title="To-Do List App"
-        description="A simple CRUDgg app for managing tasks."
+        description="A simple CRUD app for managing tasks."
         tech="React, Node.js, MongoDB"
         github="https://github.com/yourusername/todo-app"
         live=""
