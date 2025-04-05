@@ -9,6 +9,8 @@ function Navbar() {
           <li><Link to="/" className="hover:text-blue-500">Home</Link></li>
           <li><Link to="/about" className="hover:text-blue-500">About</Link></li>
           <li><Link to="/projects" className="hover:text-blue-500">Projects</Link></li>
+          <li><Link to="/contact" className="hover:text-blue-500">Contact</Link></li>
+
 
 
           {/* Add links to About, Projects, Contact here later */}

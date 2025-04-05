@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Navbar from './components/Navbar';
 import About from './pages/About';
 import Projects from './pages/Projects';
+import Contact from './pages/Contact';
 
 
 const App = () => {
@@ -15,7 +16,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
-
+          <Route path="/contact" element={<Contact />} />
           {/* Later you’ll add About, Projects, Contact pages */}
         </Routes>
       </div>
