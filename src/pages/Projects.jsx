@@ -11,7 +11,7 @@ function Projects() {
         description="A simple CRUD app for managing tasks."
         tech="React, Node.js, MongoDB"
         github="https://github.com/yourusername/todo-app"
-        live=""
+        live="https://steveostler.netlify.app/"
         image={todoImage}
       />
 
@@ -19,8 +19,8 @@ function Projects() {
         title="Modern Portfolio Site"
         description="A sleek personal website built with React and Tailwind, featuring smooth navigation and responsive layout."
         tech="React, Tailwind CSS, Vite"
-        github="https://github.com/yourusername/portfolio"
-        live="https://yourportfolio.netlify.app"
+        github="https://github.com/steveostler/portfolio"
+        live="https://steveostler.netlify.app/"
         image={todoImage}
         reverse
       />
