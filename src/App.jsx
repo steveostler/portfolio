@@ -6,7 +6,8 @@ import About from './pages/About';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
-
+import Blog from './pages/Blog';
+import MyFirstPost from './posts/MyFirstPost';
 
 
 const App = () => {
@@ -20,6 +21,8 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/my-first-post" element={<MyFirstPost />} />
           {/* Later you’ll add About, Projects, Contact pages */}
         </Routes>
         </div> 
