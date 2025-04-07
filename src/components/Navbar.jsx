@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "../assets/logo.png"; // Change if you're using a different image
+import logo from "../assets/logo.png"; // Use your logo path
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -14,11 +14,9 @@ function Navbar() {
       <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
         <Link to="/" onClick={closeMenu}>
           <img src={logo} alt="Logo" className="h-10" />
-          
-
         </Link>
 
-        {/* Desktop Menu */}
+        {/* Desktop Nav */}
         <ul className="hidden md:flex space-x-6">
           <li><Link to="/" className="hover:text-blue-500">Home</Link></li>
           <li><Link to="/about" className="hover:text-blue-500">About</Link></li>
@@ -27,28 +25,40 @@ function Navbar() {
           <li><Link to="/contact" className="hover:text-blue-500">Contact</Link></li>
         </ul>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu Icon */}
         <div className="md:hidden text-2xl text-blue-600" onClick={toggleMenu}>
           {menuOpen ? <FaTimes /> : <FaBars />}
         </div>
       </div>
 
-      {/* Animated Mobile Menu */}
+      {/* Mobile Slide-In Menu */}
       <AnimatePresence>
         {menuOpen && (
-          <motion.ul
-            className="md:hidden flex flex-col items-center space-y-6 py-6 bg-white border-t shadow"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.25 }}
-          >
-            <li><Link to="/" onClick={closeMenu} className="hover:text-blue-500">Home</Link></li>
-            <li><Link to="/about" onClick={closeMenu} className="hover:text-blue-500">About</Link></li>
-            <li><Link to="/projects" onClick={closeMenu} className="hover:text-blue-500">Projects</Link></li>
-            <li><Link to="/blog" onClick={closeMenu} className="hover:text-blue-500">Blog</Link></li>
-            <li><Link to="/contact" onClick={closeMenu} className="hover:text-blue-500">Contact</Link></li>
-          </motion.ul>
+          <>
+            {/* Backdrop */}
+            <motion.div
+              className="fixed inset-0 bg-black bg-opacity-30 z-40"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={closeMenu}
+            />
+
+            {/* Sliding Menu */}
+            <motion.div
+              className="fixed top-0 right-0 w-64 h-full bg-white shadow-lg z-50 flex flex-col items-start p-6 space-y-6"
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "tween", duration: 0.3 }}
+            >
+              <Link to="/" onClick={closeMenu} className="hover:text-blue-500">Home</Link>
+              <Link to="/about" onClick={closeMenu} className="hover:text-blue-500">About</Link>
+              <Link to="/projects" onClick={closeMenu} className="hover:text-blue-500">Projects</Link>
+              <Link to="/blog" onClick={closeMenu} className="hover:text-blue-500">Blog</Link>
+              <Link to="/contact" onClick={closeMenu} className="hover:text-blue-500">Contact</Link>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </nav>
